@@ -5,7 +5,6 @@ import styles from "./Mouse.module.scss";
 
 type MouseProps = {
   dayTime: DayTime;
-  className?: string;
 };
 
 export type MousePos = { x: number; y: number; opacity: number };
@@ -15,7 +14,7 @@ const slowPointer = { mass: 10, tension: 200, friction: 50 };
 const trans = (x: number, y: number) =>
   `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 
-const Mouse = ({ className, dayTime }: MouseProps) => {
+const Mouse = ({ dayTime }: MouseProps) => {
   const [trail, api] = useTrail(3, (i) => ({
     xy: [0, 0],
     from: { opacity: 0, xy: [0, 0] },
@@ -47,7 +46,7 @@ const Mouse = ({ className, dayTime }: MouseProps) => {
   }, []);
 
   return (
-    <div className={styles.Mouse}>
+    <div className={styles[dayTime]}>
       {trail.map((props, idx) => (
         <animated.div
           key={idx}
