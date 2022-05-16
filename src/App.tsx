@@ -8,10 +8,17 @@ export type DayTime = "Night" | "Day";
 function App() {
   const [dayTime, setDayTime] = useState<DayTime>(currentDay(getHour()));
 
+  const handleClick = () => setDayTime(dayTime === "Night" ? "Day" : "Night");
+
   return (
     <div className="App">
       <BackGround dayTime={dayTime} />
       <Mouse dayTime={dayTime} />
+      <div style={{ position: "absolute", zIndex: 1 }}>
+        <button onClick={handleClick}>
+          {dayTime === "Night" ? "Day" : "Night"}
+        </button>
+      </div>
     </div>
   );
 }
