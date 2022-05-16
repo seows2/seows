@@ -1,7 +1,7 @@
 import { DayTime } from "@/App";
 import { useEffect } from "react";
 import { useTrail, animated } from "react-spring";
-import styles from "./Mouse.module.scss";
+import * as S from "./Mouse.style";
 
 type MouseProps = {
   dayTime: DayTime;
@@ -46,14 +46,15 @@ const Mouse = ({ dayTime }: MouseProps) => {
   }, []);
 
   return (
-    <div className={styles[dayTime]}>
+    <S.MouseWrapper>
       {trail.map((props, idx) => (
         <animated.div
           key={idx}
+          className={dayTime}
           style={{ transform: props.xy.to(trans), opacity: props.opacity }}
         />
       ))}
-    </div>
+    </S.MouseWrapper>
   );
 };
 
