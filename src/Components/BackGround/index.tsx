@@ -1,35 +1,21 @@
 import { DayTime } from "@/App";
-import styled from "styled-components";
+import * as S from "./BackGround.style";
 
 type BackGroundProps = {
   dayTime: DayTime;
-  className?: string;
 };
 
-const BackGround = ({ className, dayTime }: BackGroundProps) => {
+const BackGround = ({ dayTime }: BackGroundProps) => {
   return (
-    <div className={className}>
-      <div className="background"></div>
-    </div>
+    <S.BackGroundWrapper>
+      <S.BackGround dayTime={dayTime}>
+        <div className="sky">
+          <img className="sun" src="/sun.png" alt="sun" />
+          <img className="moon" src="/moon.png" alt="moon" />
+        </div>
+      </S.BackGround>
+    </S.BackGroundWrapper>
   );
 };
 
-export default styled(BackGround)`
-  position: fixed;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  background: linear-gradient(rgb(70, 68, 68), black);
-
-  .background {
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    right: 0px;
-    bottom: 0px;
-    background-color: ${({ dayTime }) =>
-      dayTime === "Night" ? "transparent" : "white"};
-    transition: background-color 1s;
-  }
-`;
+export default BackGround;
