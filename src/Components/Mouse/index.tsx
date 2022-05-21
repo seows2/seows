@@ -43,7 +43,7 @@ const Mouse = ({ dayTime }: MouseProps) => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  });
 
   return (
     <S.MouseWrapper>
