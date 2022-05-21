@@ -27,6 +27,10 @@ export const BackGround = styled.div<{ dayTime: DayTime }>`
     height: 100%;
   }
 
+  & .cloud {
+    opacity: ${({ dayTime }) => (dayTime === "Night" ? 0.3 : 0.6)};
+  }
+
   & .moon {
     position: fixed;
     width: 12em;
@@ -60,6 +64,31 @@ export const BackGround = styled.div<{ dayTime: DayTime }>`
           `};
   }
 `;
+
+interface CloudStyleProps {
+  delay: number;
+  width: number;
+  height: number;
+  top: number;
+  duration: number;
+}
+
+export const Cloud = styled.img<CloudStyleProps>`
+  position: fixed;
+  left: 100%;
+  width: ${({ width }) => width}px;
+  height: ${({ height }) => height}px;
+  top: ${({ top }) => top}px;
+  animation: ${({ width, duration, delay }) =>
+    css`
+      ${flyingCloud(width)} ${duration}s ${delay}s linear infinite;
+    `};
+`;
+
+const flyingCloud = (width: number) => keyframes`
+      0% { transform: translateX(0px); }
+      100% { transform: translateX(-${width + 1920}px) }
+  `;
 
 const lazyPlanet = keyframes`
   0% { top: -12em };
