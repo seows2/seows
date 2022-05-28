@@ -1,11 +1,7 @@
 import { useEffect } from "react";
 import { useTrail, animated } from "react-spring";
-import { DayTime } from "interface/dayTime";
 import * as S from "./Mouse.style";
-
-type MouseProps = {
-  dayTime: DayTime;
-};
+import useDayTimeContext from "hooks/useDaytime";
 
 export type MousePos = { x: number; y: number; opacity: number };
 
@@ -14,7 +10,8 @@ const slowPointer = { mass: 10, tension: 200, friction: 50 };
 const trans = (x: number, y: number) =>
   `translate3d(${x}px,${y}px,0) translate3d(-50%,-50%,0)`;
 
-const Mouse = ({ dayTime }: MouseProps) => {
+const Mouse = () => {
+  const { dayTime } = useDayTimeContext();
   const [trail, api] = useTrail(3, (i) => ({
     xy: [0, 0],
     from: { opacity: 0, xy: [0, 0] },

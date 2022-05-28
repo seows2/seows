@@ -1,10 +1,11 @@
+import useDayTimeContext from "hooks/useDaytime";
 import * as S from "./BackGround.style";
 
 const Clouds = Array.from({ length: 3 }).map((_, idx) => (
   <S.Cloud
     key={idx}
     className="cloud"
-    src="seows/cloud.png"
+    src="cloud.png"
     delay={idx * 10}
     width={Math.floor(Math.random() * 200) + 200}
     height={Math.floor(Math.random() * 100) + 100}
@@ -14,12 +15,14 @@ const Clouds = Array.from({ length: 3 }).map((_, idx) => (
 ));
 
 const BackGround = () => {
+  const { dayTime } = useDayTimeContext();
+
   return (
     <S.BackGroundWrapper>
-      <S.BackGround dayTime="Night">
+      <S.BackGround dayTime={dayTime}>
         <div className="sky">
-          <img className="sun" src="seows/sun.png" alt="sun" />
-          <img className="moon" src="seows/moon.png" alt="moon" />
+          <img className="sun" src="sun.png" alt="sun" />
+          <img className="moon" src="moon.png" alt="moon" />
           {Clouds}
         </div>
       </S.BackGround>

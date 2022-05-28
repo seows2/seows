@@ -6,6 +6,7 @@ export const MouseWrapper = styled.div`
   top: 0;
   width: 0;
   height: 0;
+  z-index: 9999;
 
   & .Day {
     position: absolute;
