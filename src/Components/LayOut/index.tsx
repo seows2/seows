@@ -1,7 +1,7 @@
-import { DayTime } from "@/interface/dayTime";
-import { currentDay, getHour } from "../../utils/date";
 import { useState } from "react";
 import { Outlet } from "react-router-dom";
+import { DayTime } from "interface/dayTime";
+import { currentDay, getHour } from "utils/date";
 import Mouse from "../Mouse";
 
 const LayOut = () => {

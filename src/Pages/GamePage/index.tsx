@@ -1,5 +1,5 @@
-import { useCanvas } from "../../hooks/useCanvas";
 import { useCallback } from "react";
+import { useCanvas } from "hooks/useCanvas";
 
 const GamePage = () => {
   const draw = useCallback((ctx: CanvasRenderingContext2D) => {

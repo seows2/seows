@@ -1,5 +1,5 @@
-import { DayTime } from "@/interface/DayTime";
 import styled, { css, keyframes } from "styled-components";
+import { DayTime } from "interface/dayTime";
 
 export const BackGroundWrapper = styled.div`
   position: fixed;

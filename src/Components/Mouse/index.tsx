@@ -1,6 +1,6 @@
-import { DayTime } from "@/interface/DayTime";
 import { useEffect } from "react";
 import { useTrail, animated } from "react-spring";
+import { DayTime } from "interface/dayTime";
 import * as S from "./Mouse.style";
 
 type MouseProps = {
