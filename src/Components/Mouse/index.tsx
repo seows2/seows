@@ -1,4 +1,4 @@
-import { DayTime } from "@/App";
+import { DayTime } from "@/interface/DayTime";
 import { useEffect } from "react";
 import { useTrail, animated } from "react-spring";
 import * as S from "./Mouse.style";

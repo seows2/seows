@@ -1,4 +1,4 @@
-import { DayTime } from "@/App";
+import { DayTime } from "@/interface/DayTime";
 import styled, { css, keyframes } from "styled-components";
 
 export const BackGroundWrapper = styled.div`

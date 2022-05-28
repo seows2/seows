@@ -1,6 +1,10 @@
 import { RefObject, useEffect, useRef } from "react";
 
-export const useCanvas = (width: number, height: number) => {
+export const useCanvas = (
+  width: number,
+  height: number,
+  draw: (ctx: CanvasRenderingContext2D) => void
+) => {
   const canvasRef: RefObject<HTMLCanvasElement> =
     useRef<HTMLCanvasElement>(null);
 
@@ -22,7 +26,11 @@ export const useCanvas = (width: number, height: number) => {
       }
     };
     setCanvas();
-  }, [width, height]);
+
+    if (ctx) {
+      draw(ctx);
+    }
+  }, [width, height, draw]);
 
   return canvasRef;
 };
