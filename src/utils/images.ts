@@ -6,4 +6,12 @@ const loadImage = (url: string): Promise<HTMLImageElement> =>
     image.src = url;
   });
 
-export { loadImage };
+const loadImages = async () => {
+  const images = [
+    loadImage("Assets/TmaxTown.png"),
+    loadImage("Assets/playerDown.png"),
+  ];
+  return await Promise.all(images);
+};
+
+export { loadImages };
