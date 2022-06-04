@@ -10,6 +10,7 @@ const loadImages = async () => {
   const images = [
     loadImage("Assets/TmaxTown.png"),
     loadImage("Assets/playerDown.png"),
+    loadImage("Assets/foreground.png"),
   ];
   return await Promise.all(images);
 };

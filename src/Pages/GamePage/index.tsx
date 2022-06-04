@@ -41,25 +41,26 @@ const GamePage = () => {
     );
   };
 
-  const drawBackground = (
-    townImage: HTMLImageElement,
+  const drawGeneral = (
+    image: HTMLImageElement,
     ctx: CanvasRenderingContext2D
   ) => {
-    ctx.drawImage(townImage, backGroundPos.x, backGroundPos.y);
+    ctx.drawImage(image, backGroundPos.x, backGroundPos.y);
   };
 
   const animation =
     (images: HTMLImageElement[], ctx: CanvasRenderingContext2D) => () => {
       window.requestAnimationFrame(animation(images, ctx));
 
-      const [townImage, playerImage] = images;
+      const [townImage, playerImage, foregroundImage] = images;
 
       const playerStaticPos = {
         x: canvasRef.current!.width / 4 - playerImage.width / 4 / 2,
         y: canvasRef.current!.height / 4 - playerImage.height / 2,
       };
-      drawBackground(townImage, ctx);
+      drawGeneral(townImage, ctx);
       drawPlayer(playerImage, ctx);
+      drawGeneral(foregroundImage, ctx);
 
       if (keys.w.pressed) {
         let isCollision = false;
