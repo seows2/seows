@@ -9,8 +9,11 @@ const loadImage = (url: string): Promise<HTMLImageElement> =>
 const loadImages = async () => {
   const images = [
     loadImage("Assets/TmaxTown.png"),
-    loadImage("Assets/playerDown.png"),
     loadImage("Assets/foreground.png"),
+    loadImage("Assets/playerUp.png"),
+    loadImage("Assets/playerLeft.png"),
+    loadImage("Assets/playerRight.png"),
+    loadImage("Assets/playerDown.png"),
   ];
   return await Promise.all(images);
 };
