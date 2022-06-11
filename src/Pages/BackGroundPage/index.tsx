@@ -6,6 +6,7 @@ const Clouds = Array.from({ length: 3 }).map((_, idx) => (
     key={idx}
     className="cloud"
     src="cloud.png"
+    alt="cloud"
     delay={idx * 10}
     width={Math.floor(Math.random() * 200) + 200}
     height={Math.floor(Math.random() * 100) + 100}

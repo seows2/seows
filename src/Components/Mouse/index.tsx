@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTrail, animated } from "react-spring";
-import * as S from "./Mouse.style";
+import * as S from "./index.style";
 import useDayTimeContext from "hooks/useDaytime";
 
 export type MousePos = { x: number; y: number; opacity: number };
