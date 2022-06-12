@@ -7,13 +7,13 @@ import Mouse from "Components/Mouse";
 function App() {
   return (
     <>
-      <Mouse />
       <Routes>
         <Route path="/" element={<LayOut />}>
           <Route index element={<BackGround />} />
           <Route path="game" element={<GamePage />} />
         </Route>
       </Routes>
+      <Mouse />
     </>
   );
 }
