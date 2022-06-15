@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/seows/static/js/main.3eca521a.js",
+    "main.js": "/seows/static/js/main.b01a3269.js",
     "index.html": "/seows/index.html",
-    "main.3eca521a.js.map": "/seows/static/js/main.3eca521a.js.map"
+    "main.b01a3269.js.map": "/seows/static/js/main.b01a3269.js.map"
   },
   "entrypoints": [
-    "static/js/main.3eca521a.js"
+    "static/js/main.b01a3269.js"
   ]
 }
