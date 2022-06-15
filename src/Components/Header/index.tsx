@@ -1,4 +1,5 @@
 import BouncingText from "Components/BouncingText";
+import ScaleLink from "Components/ScaleLink";
 import useDayTimeContext from "hooks/useDaytime";
 import * as S from "./index.style";
 
@@ -16,11 +17,9 @@ const Header = () => {
           duration={230}
           className="title"
         />
-        <div className="ver">
-          <div>MAIN1</div>
-          <div>MAIN2</div>
-          <div>MAIN3</div>
-          <div>MAIN4</div>
+        <div className="menu-link">
+          <ScaleLink to="/" text="홈" />
+          <ScaleLink to="/game" text="게임" />
         </div>
       </div>
     </S.HeaderWrapper>

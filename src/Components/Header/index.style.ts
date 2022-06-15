@@ -17,4 +17,8 @@ export const HeaderWrapper = styled.div<{ dayTime: DayTime }>`
     letter-spacing: 1px;
     color: ${({ dayTime }) => (dayTime === "Day" ? "black" : "white")};
   }
+
+  .menu-link {
+    display: flex;
+  }
 `;
