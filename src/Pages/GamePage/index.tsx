@@ -68,7 +68,10 @@ const GamePage = () => {
 
   const animation =
     (images: HTMLImageElement[], ctx: CanvasRenderingContext2D) => () => {
-      window.requestAnimationFrame(animation(images, ctx));
+      const animationID = window.requestAnimationFrame(animation(images, ctx));
+      if (!canvasRef.current) {
+        cancelAnimationFrame(animationID);
+      }
 
       const [
         townImage,
