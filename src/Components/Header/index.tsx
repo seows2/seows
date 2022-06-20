@@ -19,6 +19,7 @@ const Header = () => {
         />
         <div className="menu-link">
           <ScaleLink to="/" text="홈" />
+          <ScaleLink to="/ball" text="탱탱볼" />
           <ScaleLink to="/game" text="게임" />
         </div>
       </div>

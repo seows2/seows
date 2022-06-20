@@ -218,7 +218,7 @@ const GamePage = () => {
     keys[key].pressed = false;
   };
 
-  const canvasRef = useCanvas(window.innerWidth, window.innerHeight, draw);
+  const canvasRef = useCanvas(window.innerWidth, window.innerHeight - 72, draw);
 
   useEffect(() => {
     window.addEventListener("keydown", handleKeyDown);

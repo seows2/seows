@@ -3,6 +3,7 @@ import BackGround from "./Pages/BackGroundPage";
 import GamePage from "./Pages/GamePage";
 import LayOut from "./Components/LayOut";
 import Mouse from "Components/Mouse";
+import BallPage from "Pages/BallPage";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<LayOut />}>
           <Route index element={<BackGround />} />
+          <Route path="ball" element={<BallPage />} />
           <Route path="game" element={<GamePage />} />
         </Route>
       </Routes>
