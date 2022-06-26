@@ -1,4 +1,5 @@
 import Header from "Components/Header";
+import PageTransition from "Components/PageTransition";
 import useDayTimeContext from "hooks/useDaytime";
 import { Outlet } from "react-router-dom";
 
@@ -7,6 +8,7 @@ const LayOut = () => {
 
   return (
     <>
+      <PageTransition />
       <Header />
       <Outlet />
       <div style={{ position: "absolute", top: "95%", zIndex: 1 }}>

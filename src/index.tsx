@@ -1,4 +1,5 @@
 import DayTimeProvider from "provider/DayTimeProvider";
+import TransitionProvider from "provider/TransitionProvider";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
@@ -12,9 +13,11 @@ root.render(
   <React.StrictMode>
     <GlobalStyle />
     <DayTimeProvider>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <App />
-      </BrowserRouter>
+      <TransitionProvider>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+          <App />
+        </BrowserRouter>
+      </TransitionProvider>
     </DayTimeProvider>
   </React.StrictMode>
 );

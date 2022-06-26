@@ -1,3 +1,4 @@
+import useTransition from "hooks/useTransition";
 import * as S from "./index.style";
 
 interface ScaleLinkProps {
@@ -6,9 +7,12 @@ interface ScaleLinkProps {
 }
 
 const ScaleLink = ({ to, text }: ScaleLinkProps) => {
+  const { activeTransition } = useTransition();
   return (
     <S.ScaleLink>
-      <S.StyledLink to={to}>{text}</S.StyledLink>
+      <S.StyledLink to={to} onClick={activeTransition}>
+        {text}
+      </S.StyledLink>
     </S.ScaleLink>
   );
 };
