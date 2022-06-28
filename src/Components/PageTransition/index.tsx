@@ -6,8 +6,8 @@ const PageTransition = () => {
 
   return (
     <>
-      <S.Transition skew={5} color="skyblue" delay={100} active={transition} />
-      <S.Transition skew={-5} color="red" delay={200} active={transition} />
+      <S.Transition color="skyblue" delay={100} active={transition} />
+      <S.Transition color="red" delay={200} active={transition} />
     </>
   );
 };

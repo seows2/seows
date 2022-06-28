@@ -9,7 +9,7 @@ const TransitionProvider = ({ children }: TransitionProviderProps) => {
   const [transition, setTransition] = useState(false);
   const activeTransition = () => {
     setTransition(true);
-    setTimeout(() => setTransition(false), 4000);
+    setTimeout(() => setTransition(false), 4500);
   };
 
   return (
